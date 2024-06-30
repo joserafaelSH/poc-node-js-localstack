@@ -5,6 +5,7 @@ on: push
 jobs:
   continuos-integration:
     runs-on: ubuntu-latest
+    environment: poc-node-js-localstack-env
 
     steps:
       - uses: actions/checkout@v3
