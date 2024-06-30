@@ -19,6 +19,17 @@ jobs:
           image-tag: 'latest'
           install-awslocal: 'true'
 
+      - name: Create .env file
+        run: |
+          touch .env
+          echo "AWS_ACCESS_KEY_ID=${{vars.AWS_ACCESS_KEY_ID}}" >> .env
+          echo "AWS_ENDPOINT=${{vars.AWS_ENDPOINT}}" >> .env
+          echo "AWS_REGION=${{vars.AWS_REGION}}" >> .env
+          echo "AWS_SECRET_ACCESS_KEY=${{vars.AWS_SECRET_ACCESS_KEY}}" >> .env
+          echo "ITEMS_TABLE_NAME=${{vars.ITEMS_TABLE_NAME}}" >> .env
+
+
+
       - name: run install, build and test
         run: |
           npm install
