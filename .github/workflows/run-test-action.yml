@@ -14,11 +14,11 @@ jobs:
         with:
           node-version: 22.
 
-      #- name: Start LocalStack
-        #  uses: LocalStack/setup-localstack@v0.2.0
-        #with:
-          #image-tag: 'latest'
-          #install-awslocal: 'true'
+      - name: Start LocalStack
+        uses: LocalStack/setup-localstack@v0.2.0
+        with:
+          image-tag: 'latest'
+          install-awslocal: 'true'
 
       - name: Create .env file
         run: |
